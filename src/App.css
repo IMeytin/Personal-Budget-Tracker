@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #003366;
+  --secondary-color: #F4F4F4;
+  --text-color: #333333;
+  --button-color: #007BFF;
+  --input-primary-color: #FFFFFF;
+  --input-secondary-color: #E0E0E0;
+
+  --heading-font: 'Montserrat', sans-serif;;
+  --body-text-font: 'Roboto', sans-serif;;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--secondary-color);
+  margin: 0px;
+  line-height: 1.6;
+}
+.body-color-font {
+  font-family: var(--body-text-font);
+  color: var(--text-color);
+}
+header {
+  background-color: var(--primary-color);
+  width: 100%;
+}
+.container {
+  max-width: 1315px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  font-family: var(--heading-font);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li:not(:last-child) {
+  margin-right: 90px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 21px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* homePage */
+.heading, .welcome-section-container{
+  margin: 50px 0px;
+}
+.welcome-section-img {
+  width: 300px;
+}
+.welcome-section-container {
+  display: flex;
+  justify-content: space-around;
+}
+.welcome-text-container {
+  max-width: 540px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+}
+.subHeading{
+  font-size: 20px;
+}
+.body-text {
+  font-size: 18px;
+}
+hr {
+  color: var(--primary-color);
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+
+/* TransactionPage */
+.transaction-page {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+.transactionPage-divider {
+  width: 400px;
+}
+.transactionPage-divider-2 {
+  margin: 0px;
+}
+
+.overview-section {
+  margin: 0px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: -50px;
+}
+.display-financial {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 20px;
+  font-family: var(--heading-font);
+  padding: 7px;
+  width: 290px;
+  margin-top: 5px;
+}
+.action-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-family: var(--heading-font);
+  color: var(--button-color);
+
+}
+.form-container{
+  margin-left: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.income-magrin {
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* form */
+input {
+  background-color: var(--input-primary-color);
+  border: var(--input-secondary-color) 2px solid;
+  padding: 5px;
+  /* font-family: var(--body-text-font); */
+}
+.input-radio-container {
+  margin: 5px 0px 20px;
+}
+label {
+  font-size: 18px;
+  color: var(--text-color);
+  font-family: var(--body-text-font);
+  font-weight: bold;
+}
+
+
+
+.progress-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: blue;
+  transition: width 0.3s ease-in-out;
 }
