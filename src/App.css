@@ -138,7 +138,11 @@ input {
   /* font-family: var(--body-text-font); */
 }
 .input-radio-container {
-  margin: 5px 0px 20px;
+  display: flex;
+  margin: 10px 0px;
+}
+.input-radio-container div:not(:first-child) {
+  margin-left: 10px;
 }
 label {
   font-size: 18px;

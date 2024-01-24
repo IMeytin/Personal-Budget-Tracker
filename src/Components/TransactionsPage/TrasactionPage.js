@@ -1,4 +1,4 @@
-import AddTransactionFrom from "./AddTransactionFrom";
+import TransactionForm from "./TransactionForm";
 
 function TransactionPage() {
     return ( 
@@ -19,7 +19,7 @@ function TransactionPage() {
                 <hr className="transactionPage-divider-2"/>
 
             <section className="form-container">
-                <AddTransactionFrom /> 
+                <TransactionForm /> 
             </section>
         </main>
      );
