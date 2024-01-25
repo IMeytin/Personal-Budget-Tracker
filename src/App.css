@@ -86,6 +86,7 @@ hr {
 
 
 /* TransactionPage */
+
 .transaction-page {
   display: flex;
   justify-content: flex-start;
@@ -98,13 +99,15 @@ hr {
   margin: 0px;
 }
 
-.overview-section {
+.financial-overview-section, .transaction-list-section {
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: -50px;
 }
+
+/* Income and Budget Component */
 .display-financial {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -114,6 +117,20 @@ hr {
   width: 290px;
   margin-top: 5px;
 }
+.income-magrin {
+  margin-bottom: 40px;
+}
+.financial-form-labels, .finantial-form-input{
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
+  font-size: 20px;
+}
+.finantial-form-input {
+  background-color: var(--primary-color);
+  width: 150px;
+  border: none;
+}
+
 .action-btn {
   border: none;
   background: none;
@@ -126,32 +143,53 @@ hr {
   margin-left: 100px;
 }
 
-.income-magrin {
-  margin-bottom: 40px;
-}
 
-/* form */
+/* Expenses form */
 input {
   background-color: var(--input-primary-color);
   border: var(--input-secondary-color) 2px solid;
   padding: 5px;
-  /* font-family: var(--body-text-font); */
+  font-family: var(--body-text-font);
 }
 .input-radio-container {
   display: flex;
   margin: 10px 0px;
 }
 .input-radio-container div:not(:first-child) {
-  margin-left: 10px;
+  margin-left: 15px;
 }
+
 label {
   font-size: 18px;
   color: var(--text-color);
   font-family: var(--body-text-font);
   font-weight: bold;
 }
+#rent {
+  margin-left: 0;
+}
+.amount-wrapper {
+  position: relative;
+}
+.dollar-sign {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#amount {
+  padding-left: 15px;
+}
+
+.btn-add-expanse {
+  margin: 25px 0px;
+  padding: 10px;
+  text-transform: uppercase;
+  border: var(--button-color) solid 1px;
+}
 
 
+/* Trying the progress bar */
 
 .progress-container {
   width: 100%;

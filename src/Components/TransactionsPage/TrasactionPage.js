@@ -1,20 +1,19 @@
+import IncomeAndBudget from "./IncomeAndBudget";
 import TransactionForm from "./TransactionForm";
 
 function TransactionPage() {
     return ( 
         <main className="transaction-page">
-            <section className="overview-section">
-                <div>
-                    <button className="action-btn">ADD INCOME</button>
-                    <p className="display-financial income-magrin">Income: $1000</p>
+            <div>
+                <section className="financial-overview-section">
+                    <IncomeAndBudget />
+                    <hr className="transactionPage-divider"/>
+                </section>
 
-                    <button className="action-btn">ADD BUDGET</button>
-                    <p className="display-financial">Budget: $500</p>
-                </div>
-
-                <hr className="transactionPage-divider"/>
-                <div>Transactions</div>
-            </section>
+                <section className="transaction-list-section">
+                    <div>Transactions</div>
+                </section>
+            </div>
 
                 <hr className="transactionPage-divider-2"/>
 

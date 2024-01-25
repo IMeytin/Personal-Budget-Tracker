@@ -26,12 +26,14 @@ function TransactionForm() {
         console.log(formData)
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmittedData([...submittedData, formData])
+        console.log(submittedData)
     }
 
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Category</label>
             <div className="input-radio-container">
                 {radioOptions.map( option => (
@@ -61,14 +63,17 @@ function TransactionForm() {
 
             <div>
                 <label htmlFor="amount">Amount:</label><br />
-                $<input 
-                className="amount-input" 
-                type="text"
-                id="amount" 
-                name="amount"
-                value={formData.amount}
-                onChange={handleChange}/>
+                <div className="amount-wrapper">
+                    <span className="dollar-sign">$</span>
+                    <input 
+                    type="text"
+                    id="amount" 
+                    name="amount"
+                    value={formData.amount}
+                    onChange={handleChange}/>
+                </div>
             </div>
+            <button className="action-btn btn-add-expanse" type="submit">Add Expense</button>
     </form>
     );
 }
