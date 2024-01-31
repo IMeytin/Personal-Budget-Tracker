@@ -295,7 +295,7 @@ label {
     margin-left: -20px;
   }
   .transactionPage-divider {
-    width: 300px;
+    width: 330px;
   }
   .transactions-form-section{
     margin-left: 30px;
@@ -409,7 +409,7 @@ label {
     order: 1;
   }
   .transactionPage-divider{
-    width: 350px;
+    max-width: 330px;
     order: -1;
   }
 
