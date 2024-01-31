@@ -320,7 +320,7 @@ label {
 
   /* TransactionList */
   .display-expenses-wrapper {
-    width: 150px;
+    width: 155px;
     padding: 7px 12px;
     margin: 10px 5px;
   }
@@ -419,7 +419,6 @@ label {
   .financial-overview-section, .transaction-list-section {
     margin: 0px;
     margin-left: 0px;
-    justify-content: center;
   }
   .transactions-form-section{
     margin-left: 0px;
@@ -450,7 +449,7 @@ label {
     margin: 0px 0px 5px 0px;
   }
   .delete-btn {
-    font-size: 20px;
+    font-size: 22px;
   }
     /* Reports welcome text */ 
     .reports-image {
