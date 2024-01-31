@@ -23,7 +23,7 @@ function TransactionsList() {
                                             <p>${amount}</p>
                                         </div>
                                         <div >
-                                            <button onClick={() => dispatch(removeSubmittedData({id}))} className="delete-btn">X</button>
+                                            <button onClick={() => dispatch(removeSubmittedData({id}))} className="delete-btn"><bold>X</bold></button>
                                         </div>
                                     </div>
                                 )

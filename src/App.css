@@ -191,8 +191,9 @@ header {
   font-size: 30px;
   color: var(--primary-color);
   cursor: pointer;
-  font-weight: 100;
+  padding: 0;
 }
+
 .delete-btn:hover{
   color: red;
 }
@@ -356,16 +357,9 @@ label {
   body {
     line-height: 1.4;
   }
-  /* .link {
-    font-size: 19px;
-  } */
   h2 {
-    /* font-size: 21px; */
     text-align: center;
   }
-  /* .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
-    font-size: 18px;
-  } */
   .container {
     padding: 0 20px;
   }
