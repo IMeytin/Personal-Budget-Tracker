@@ -6,8 +6,8 @@
 - **Expense Categorization**: Organize expenses into categories for better insight into your spending habits.
 
 ## Technology Used
-  - HTML5
-  - CSS6
+  - HTML5 
+  - CSS6 
   - React
   - Redux Toolkit
   - chart.js
