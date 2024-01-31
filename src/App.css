@@ -75,15 +75,19 @@ header {
 }
 
 /* homePage */
-.heading-margin , .welcome-section-container, .reports-welcome-section{
+.heading-margin , .welcome-section-container, .reports-welcome-section, .welcome-section-container-2{
   margin: 50px 0px;
 }
-.welcome-section-img {
+.welcome-section-img, .welcome-section-img-2 {
   max-width: 300px;
 }
 .welcome-section-container, .reports-welcome-section {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-around;
+}
+.welcome-section-container-2 {
+  display: flex;
   justify-content: space-around;
 }
 .welcome-text-container {
@@ -284,7 +288,7 @@ label {
   h2 {
     font-size: 22px;
   }
-  .heading-margin , .welcome-section-container, .reports-welcome-section {
+  .heading-margin , .welcome-section-container, .reports-welcome-section, .welcome-section-container-2 {
     margin: 30px 0px
   }
   .subHeading, .display-financial, .financial-form-labels, .financial-form-input {
@@ -378,11 +382,15 @@ label {
   }
 
   /* homePage */
-  .welcome-section-container {
+  .welcome-section-container, .welcome-section-container-2 {
     display: block;
   }
   .welcome-section-img {
     float: right;
+    max-width: 170px;
+  }
+  .welcome-section-img-2 {
+    float: left;
     max-width: 170px;
   }
   .heading-margin {
