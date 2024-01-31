@@ -65,6 +65,7 @@ function TransactionsForm() {
                         required
                         type="number"
                         step="0.01"
+                        min='0'
                         id="amount" 
                         name="amount"
                         value={transactionsData.amount}

@@ -46,7 +46,7 @@ export const getTotalByCategory = createSelector(
             if(!totals[category]) {
                 totals[category] = 0
             }
-            totals[category] += Number(amount);
+            totals[category] = Number((totals[category]+ Number(amount)).toFixed(2));
             return totals;
         },{})
     }
@@ -56,7 +56,7 @@ export const getTotalExpenses = createSelector(
     [getSubmittedData],
     (submittedData) => {
         return submittedData.reduce((total, {amount}) => {
-            return total += Number(amount)
+            return Number((total + Number(amount)).toFixed(2));
         }, 0);
     }
 )

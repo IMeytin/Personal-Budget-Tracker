@@ -47,6 +47,8 @@ function IncomeAndBudget() {
                         autoFocus
                         className="financial-form-input"
                         type="number" 
+                        min='0'
+                        step="0.01"
                         id="income"
                         name="income"
                         value={financeData.income}
@@ -69,6 +71,8 @@ function IncomeAndBudget() {
                         autoFocus
                         className="financial-form-input"
                         type="number" 
+                        min='0'
+                        step="0.01"
                         id="budget"
                         name="budget"
                         value={financeData.budget}
