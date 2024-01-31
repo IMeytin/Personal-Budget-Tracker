@@ -1,7 +1,9 @@
 import IncomeAndBudget from "./IncomeAndBudget";
-import TransactionForm from "./TransactionForm";
+import TransactionsForm from "./TransactionsForm";
+import TransactionsList from "./TransactionsList";
+import cointImg from "../../Images/coint.jpg"
 
-function TransactionPage() {
+function TransactionsPage() {
     return ( 
         <main className="transaction-page">
             <div>
@@ -11,17 +13,24 @@ function TransactionPage() {
                 </section>
 
                 <section className="transaction-list-section">
-                    <div>Transactions</div>
+                    <TransactionsList />
                 </section>
             </div>
 
                 <hr className="transactionPage-divider-2"/>
 
             <section className="form-container">
-                <TransactionForm /> 
+                <div className="heading">
+                    <h2>Record Your Expenses</h2>
+                </div>
+                <TransactionsForm /> 
             </section>
+
+            <div className="img-wrapper">
+                <img src={cointImg} alt="coint" className="transaction-page-img"/>
+            </div>
         </main>
      );
 }
 
-export default TransactionPage;
+export default TransactionsPage;

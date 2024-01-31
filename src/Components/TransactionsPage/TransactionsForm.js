@@ -1,35 +1,28 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setTransactionsData, resetTransactionData, addSubmittedData, getTransactionsData } from "../../redux/transactionsSlice";
 
-function TransactionForm() {
+function TransactionsForm() {
     const radioOptions = [
-        { value: 'rent', label: 'Rent'},
-        {value: 'grocery', label: 'Grocery'},
-        {value: 'shopping', label: 'Shopping'},
-        {value: 'dining out', label: 'Dining Out'},
-        {value: 'other', label: 'Other'}
+        {value: 'Rent', label: 'Rent'},
+        {value: 'Grocery', label: 'Grocery'},
+        {value: 'Shopping', label: 'Shopping'},
+        {value: 'Dining out', label: 'Dining Out'},
+        {value: 'Other', label: 'Other'}
     ];
 
-    const [formData, setFormData] = useState({
-        category: '',
-        date: '',
-        amount: ''
-    });
-    const [submittedData, setSubmittedData] = useState([]);
+    const transactionsData = useSelector(getTransactionsData)
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
-        const {name , value} = e.target
+        const {name , value} = e.target;
 
-        setFormData({
-            ...formData, 
-            [name]: value
-        })
-        console.log(formData)
+        dispatch(setTransactionsData({name, value}))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmittedData([...submittedData, formData])
-        console.log(submittedData)
+        dispatch(addSubmittedData());
+        dispatch(resetTransactionData())
     }
 
     return ( 
@@ -39,11 +32,12 @@ function TransactionForm() {
                 {radioOptions.map( option => (
                     <div key={option.value}>
                         <input
+                        required
                         type="radio"
                         name="category"
                         value={option.value}
                         id={option.value}
-                        checked={formData.category === option.value}
+                        checked={transactionsData.category === option.value}
                         onChange={handleChange}/>
                         <label htmlFor={option.value}>{option.label}</label>
                     </div>
@@ -53,11 +47,11 @@ function TransactionForm() {
             <div>
                 <label htmlFor="date">Date</label><br />
                 <input 
-                className="" 
+                required
                 name="date"
                 type="date" 
                 id="date" 
-                value={formData.date}
+                value={transactionsData.date}
                 onChange={handleChange}/>
             </div>
 
@@ -66,10 +60,11 @@ function TransactionForm() {
                 <div className="amount-wrapper">
                     <span className="dollar-sign">$</span>
                     <input 
-                    type="text"
+                    required
+                    type="number"
                     id="amount" 
                     name="amount"
-                    value={formData.amount}
+                    value={transactionsData.amount}
                     onChange={handleChange}/>
                 </div>
             </div>
@@ -78,4 +73,4 @@ function TransactionForm() {
     );
 }
 
-export default TransactionForm;
+export default TransactionsForm;

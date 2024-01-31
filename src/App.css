@@ -9,8 +9,8 @@
   --input-primary-color: #FFFFFF;
   --input-secondary-color: #E0E0E0;
 
-  --heading-font: 'Montserrat', sans-serif;;
-  --body-text-font: 'Roboto', sans-serif;;
+  --heading-font: 'Montserrat', sans-serif;
+  --body-text-font: 'Roboto', sans-serif;
 }
 
 body {
@@ -18,10 +18,25 @@ body {
   margin: 0px;
   line-height: 1.6;
 }
-.body-color-font {
+.body-color-font, label {
   font-family: var(--body-text-font);
   color: var(--text-color);
 }
+.body-text, .action-btn, label  {
+  font-size: 18px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+} 
+hr {
+  border: var(--primary-color) 1.5px solid;
+  border-radius: 3px;
+}
+
+/* navBar */
 header {
   background-color: var(--primary-color);
   width: 100%;
@@ -55,7 +70,7 @@ header {
 }
 
 /* homePage */
-.heading, .welcome-section-container{
+.heading-margin , .welcome-section-container{
   margin: 50px 0px;
 }
 .welcome-section-img {
@@ -68,22 +83,10 @@ header {
 .welcome-text-container {
   max-width: 540px;
 }
-.heading {
-  display: flex;
-  justify-content: center;
-}
-.subHeading{
+
+.subHeading, .display-financial, .financial-form-labels, .finantial-form-input{
   font-size: 20px;
 }
-.body-text {
-  font-size: 18px;
-}
-hr {
-  color: var(--primary-color);
-  border: 1px solid;
-  border-radius: 3px;
-}
-
 
 /* TransactionPage */
 
@@ -97,9 +100,10 @@ hr {
 }
 .transactionPage-divider-2 {
   margin: 0px;
+  min-height: 800px;
 }
 
-.financial-overview-section, .transaction-list-section {
+.financial-overview-section, .transaction-list-section{
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
@@ -107,11 +111,18 @@ hr {
   margin-left: -50px;
 }
 
+.transaction-page-img{
+  width: 300px;
+}
+.img-wrapper {
+  margin-left: auto;
+  margin-top: 70px;
+}
+
 /* Income and Budget Component */
 .display-financial {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-size: 20px;
   font-family: var(--heading-font);
   padding: 7px;
   width: 290px;
@@ -123,8 +134,12 @@ hr {
 .financial-form-labels, .finantial-form-input{
   color: var(--secondary-color);
   font-family: var(--heading-font);
-  font-size: 20px;
+  height: 30px;
 }
+.budget-margin, .finance-form-wrapper {
+  margin-bottom: 20px;
+}
+
 .finantial-form-input {
   background-color: var(--primary-color);
   width: 150px;
@@ -134,13 +149,12 @@ hr {
 .action-btn {
   border: none;
   background: none;
-  font-size: 18px;
   font-family: var(--heading-font);
   color: var(--button-color);
 
 }
 .form-container{
-  margin-left: 100px;
+  margin-left: 90px;
 }
 
 
@@ -160,9 +174,6 @@ input {
 }
 
 label {
-  font-size: 18px;
-  color: var(--text-color);
-  font-family: var(--body-text-font);
   font-weight: bold;
 }
 #rent {
@@ -188,18 +199,61 @@ label {
   border: var(--button-color) solid 1px;
 }
 
+/* TransactionList */
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 400px;
 
-/* Trying the progress bar */
-
-.progress-container {
-  width: 100%;
-  background-color: #eee;
-  border-radius: 4px;
-  overflow: hidden;
+}
+.display-expenses-wrapper {
+  border: var(--primary-color) 1.5px solid;
+  border-radius: 25px;
+  background-color: var(--input-primary-color);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+  padding: 10px 15px;
+  width: 170px;
+}
+.display-expenses p {
+  margin: 0;
 }
 
-.progress-bar {
-  height: 20px;
-  background-color: blue;
-  transition: width 0.3s ease-in-out;
+.delete-btn {
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 100;
 }
+.delete-btn:hover{
+  color: red;
+}
+.noExpenses-img{
+  width: 400px;
+}
+
+/* Reports Page */
+.chart-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0px;
+}
+/* Reports welcome text */
+.reports-image {
+  width: 500px;
+}
+.reports-welcome-section{
+  align-items: center;
+}
+
+/* Bar Chart */
+.bar-chart {
+  width: 600px;
+}
+
+

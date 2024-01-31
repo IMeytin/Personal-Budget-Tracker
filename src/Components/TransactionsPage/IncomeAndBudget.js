@@ -1,54 +1,46 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getFinaceData, setIncome, setBudget, setEditingStatus, getEditStatus } from "../../redux/financeSlice";
+
 
 function IncomeAndBudget() {
-    const [financeFormData, setFinanceFormData] = useState({
-        income: 1000,
-        budget: 500
-        });
-
-    const [editStatus, setEditStatus] = useState({
-        isEditingIncome: false,
-        isEditingBudget: false
-    })
+    const dispatch = useDispatch();
+    const financeData = useSelector(getFinaceData);
+    const editStatus = useSelector(getEditStatus)
 
     const handleEditIncome = () => {
-        setEditStatus(prevStatus => ({
-            ...prevStatus,
-            isEditingIncome: true
-        }))
+        dispatch(setEditingStatus({field: 'isEditingIncome', value: true}))
     }
 
     const handleEditBudget = () => {
-        setEditStatus(prevStatus => ({
-            ...prevStatus,
-            isEditingBudget: true
-        }));
+        dispatch(setEditingStatus({field: 'isEditingBudget', value: true}))
     }
 
     const handleChange = (e) => {
         const {name, value} = e.target;
 
-        setFinanceFormData(prevFormData => ({
-            ...prevFormData, 
-            [name]:value
-        }))
-        console.log(financeFormData.income)
+        if (name === 'income'){
+            dispatch(setIncome(value))
+        }
+        else if (name === 'budget') {
+            dispatch(setBudget(value))
+        }
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        setEditStatus({
-            isEditingIncome: false,
-            isEditingBudget: false
-        })
+        if(editStatus.isEditingIncome){
+            dispatch(setEditingStatus({field: 'isEditingIncome', value: false}))
+        }
+        else if(editStatus.isEditingBudget){
+            dispatch(setEditingStatus({field: 'isEditingBudget',value: false}))
+        }
     }
-    console.log(editStatus)
 
     return ( 
-        <div>
+        <div className="finance-form-wrapper">
             {editStatus.isEditingIncome ? (
                 <form onSubmit={handleSubmit}>
-                    <button type="submit" className="action-btn">ADD INCOME</button>
+                    <button type="submit" className="action-btn">SET INCOME</button>
                     <div className="display-financial income-magrin">
                         <label className="financial-form-labels" htmlFor="income">Income: $</label>
                         <input 
@@ -57,21 +49,21 @@ function IncomeAndBudget() {
                         type="number" 
                         id="income"
                         name="income"
-                        value={financeFormData.income}
+                        value={financeData.income}
                         onChange={handleChange}/>
                     </div>
                 </form>
             ) : (
                 <div>
-                    <button className="action-btn" onClick={handleEditIncome}>ADD INCOME</button>
-                    <p className="display-financial income-magrin">Income: ${financeFormData.income}</p>
+                    <button className="action-btn" onClick={handleEditIncome}>SET INCOME</button>
+                    <p className="display-financial income-magrin">Income: $ {financeData.income}</p>
                 </div>
             )}
 
             {editStatus.isEditingBudget ? (
                 <form onSubmit={handleSubmit}>
-                    <button type="submit" className="action-btn">ADD INCOME</button>
-                    <div className="display-financial income-magrin">
+                    <button type="submit" className="action-btn">SET BUDGET</button>
+                    <div className="display-financial budget-margin">
                         <label className="financial-form-labels" htmlFor="budget">Budget: $</label>
                         <input 
                         autoFocus
@@ -79,14 +71,14 @@ function IncomeAndBudget() {
                         type="number" 
                         id="budget"
                         name="budget"
-                        value={financeFormData.budget}
+                        value={financeData.budget}
                         onChange={handleChange}/>
                     </div>
                 </form>
             ):(
                 <div>
-                    <button className="action-btn" onClick={handleEditBudget}>ADD BUDGET</button>
-                    <p className="display-financial">Budget: ${financeFormData.budget}</p>
+                    <button className="action-btn" onClick={handleEditBudget}>SET BUDGET</button>
+                    <p className="display-financial">Budget: $ {financeData.budget}</p>
                 </div>
             )}
         </div>
