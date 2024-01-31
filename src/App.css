@@ -387,15 +387,15 @@ label {
   }
 
   /* homePage */
-  .heading-margin , .welcome-section-container, .reports-welcome-section {
-    margin: 15px 0px
-  }
   .welcome-section-container {
     display: block;
   }
   .welcome-section-img {
     float: right;
     max-width: 170px;
+  }
+  .heading-margin {
+    margin: 15px 0px;
   }
   /* TransactionPage */
   .transaction-page-img{
