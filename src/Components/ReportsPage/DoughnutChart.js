@@ -1,27 +1,24 @@
 import 'chart.js/auto';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import { getFinaceData } from '../../redux/financeSlice';
-import { getTotalExpenses } from '../../redux/transactionsSlice';
 
-function PieChart() {
+function DoughtnutChart() {
+    const income = useSelector(state => getFinaceData(state).income);
     const budget = useSelector(state => getFinaceData(state).budget);
-    const totalExpenses = useSelector(getTotalExpenses);
-
 
     const data = {
-        labels: ['Budget', 'Expenses'],
+        labels: ['Income', 'Budget'],
         datasets: [
             {
-                label: '$',
-                data: [ budget, totalExpenses],
+                data: [income, budget],
                 backgroundColor: [
-                    '#246EB9',
-                    '#C0392B'
+                    '#28B463',
+                    '#246EB9'
                 ]
             }
         ]
-    };
+    }
 
     const options = {
         plugins: {
@@ -35,28 +32,21 @@ function PieChart() {
             },
             title: {
                 display: true,
-                text: 'Budget VS Expenses',
+                text: 'Income-Budget Balance Chart',
                 font: {
                     size: 20,
                     family: `'Montserrat', sans-serif`
                 },
                 color: '#003366'
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(tooltipItem) {
-                        return tooltipItem.dataset.label + tooltipItem.parsed
-                    }
-                }
             }
         }
     }
-    
+
     return ( 
         <div className='chart'>
-            <Pie data={data} options={options}/>
+            <Doughnut data={data} options={options}/>
         </div>
      );
 }
 
-export default PieChart;
+export default DoughtnutChart;

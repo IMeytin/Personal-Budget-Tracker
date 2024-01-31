@@ -5,8 +5,8 @@ function NavBar() {
     return ( 
         <header>
             <nav className='container navBar'>
-                <div>
-                    <img src={logo} alt="logo" width='80px' height='90px'/>
+                <div className='logo-wrapper'>
+                    <img className='logo' src={logo} alt="logo"/>
                 </div>
                 <ul className="nav-links">
                     <li>

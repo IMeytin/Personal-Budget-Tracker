@@ -1,4 +1,5 @@
 import BarChart from "./BarChart";
+import DoughtnutChart from "./DoughnutChart";
 import PieChart from "./PieChart";
 import ReportsWelcomeText from "./ReportsWelcomeText";
 
@@ -10,6 +11,7 @@ function ReportsPage() {
             </section>
             <hr />
             <section className="chart-section">
+                <DoughtnutChart />
                 <BarChart />
                 <PieChart />
             </section>

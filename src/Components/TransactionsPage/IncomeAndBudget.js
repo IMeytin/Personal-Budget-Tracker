@@ -45,7 +45,7 @@ function IncomeAndBudget() {
                         <label className="financial-form-labels" htmlFor="income">Income: $</label>
                         <input 
                         autoFocus
-                        className="finantial-form-input"
+                        className="financial-form-input"
                         type="number" 
                         id="income"
                         name="income"
@@ -67,7 +67,7 @@ function IncomeAndBudget() {
                         <label className="financial-form-labels" htmlFor="budget">Budget: $</label>
                         <input 
                         autoFocus
-                        className="finantial-form-input"
+                        className="financial-form-input"
                         type="number" 
                         id="budget"
                         name="budget"

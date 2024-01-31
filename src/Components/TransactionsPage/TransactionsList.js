@@ -9,8 +9,8 @@ function TransactionsList() {
         <div>
             {submittedData && submittedData.length > 0 ? (
                 <div>
-                    <div className="heading subHeading">
-                        <h3>Expenses</h3>
+                    <div className="heading">
+                        <h3 className="subHeading">Expenses</h3>
                     </div>
                     <div className="list">
                         {submittedData.map((transactionsData) => {

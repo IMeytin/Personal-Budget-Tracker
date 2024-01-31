@@ -1,3 +1,4 @@
+import cointImg from "../../Images/coint.jpg"
 import { useDispatch, useSelector } from "react-redux";
 import { setTransactionsData, resetTransactionData, addSubmittedData, getTransactionsData } from "../../redux/transactionsSlice";
 
@@ -6,7 +7,7 @@ function TransactionsForm() {
         {value: 'Rent', label: 'Rent'},
         {value: 'Grocery', label: 'Grocery'},
         {value: 'Shopping', label: 'Shopping'},
-        {value: 'Dining out', label: 'Dining Out'},
+        {value: 'Dining Out', label: 'Dining Out'},
         {value: 'Other', label: 'Other'}
     ];
 
@@ -26,50 +27,56 @@ function TransactionsForm() {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <label>Category</label>
-            <div className="input-radio-container">
-                {radioOptions.map( option => (
-                    <div key={option.value}>
-                        <input
-                        required
-                        type="radio"
-                        name="category"
-                        value={option.value}
-                        id={option.value}
-                        checked={transactionsData.category === option.value}
-                        onChange={handleChange}/>
-                        <label htmlFor={option.value}>{option.label}</label>
-                    </div>
-                ))}
-            </div>
-        
-            <div>
-                <label htmlFor="date">Date</label><br />
-                <input 
-                required
-                name="date"
-                type="date" 
-                id="date" 
-                value={transactionsData.date}
-                onChange={handleChange}/>
-            </div>
-
-            <div>
-                <label htmlFor="amount">Amount:</label><br />
-                <div className="amount-wrapper">
-                    <span className="dollar-sign">$</span>
+        <div className="wrapper">
+            <form onSubmit={handleSubmit}>
+                <label>Category</label>
+                <div className="input-radio-container">
+                    {radioOptions.map( option => (
+                        <div key={option.value}>
+                            <input
+                            required
+                            type="radio"
+                            name="category"
+                            value={option.value}
+                            id={option.value}
+                            checked={transactionsData.category === option.value}
+                            onChange={handleChange}/>
+                            <label htmlFor={option.value}>{option.label}</label>
+                        </div>
+                    ))}
+                </div>
+                    
+                <div>
+                    <label htmlFor="date">Date</label><br />
                     <input 
                     required
-                    type="number"
-                    id="amount" 
-                    name="amount"
-                    value={transactionsData.amount}
+                    name="date"
+                    type="date" 
+                    id="date" 
+                    value={transactionsData.date}
                     onChange={handleChange}/>
                 </div>
+
+                <div>
+                    <label htmlFor="amount">Amount:</label><br />
+                    <div className="amount-wrapper">
+                        <span className="dollar-sign">$</span>
+                        <input 
+                        required
+                        type="number"
+                        step="0.01"
+                        id="amount" 
+                        name="amount"
+                        value={transactionsData.amount}
+                        onChange={handleChange}/>
+                    </div>
+                </div>
+                <button className="action-btn btn-add-expanse" type="submit">Add Expense</button>
+            </form>
+            <div className="form-img-wrapper">
+                <img src={cointImg} alt="coint" className="transaction-page-img"/>
             </div>
-            <button className="action-btn btn-add-expanse" type="submit">Add Expense</button>
-    </form>
+        </div>
     );
 }
 

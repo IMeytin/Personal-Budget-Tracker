@@ -6,17 +6,19 @@ import "chart.js/auto";
 
 function BarChart() {
     const totalByCategory = useSelector(getTotalByCategory);
-    const dataPoints = Object.values(totalByCategory);
+    const categories = ['Rent', 'Grocery', 'Shopping', 'Dining Out', 'Other']
+    const dataPoints = categories.map(category => totalByCategory[category] || 0)
+    console.log(totalByCategory)
 
     const data = {
-        labels: ['Rent', 'Grocery', 'Shopping', 'Dining Out', 'Other'],
+        labels: categories,
         datasets: [
             {
                 label: 'Amount spent $',
                 data: dataPoints,
                 backgroundColor: [
-                    '#28B463',
-                    '#E74C3C',
+                    '#F7567C',
+                    '#00E8FC',
                     '#F1C40F',
                     '#246EB9',
                     '#8E44AD'
@@ -27,6 +29,8 @@ function BarChart() {
         ]
     };
     const options = {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false

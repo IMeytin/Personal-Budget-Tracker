@@ -1,12 +1,11 @@
 import IncomeAndBudget from "./IncomeAndBudget";
 import TransactionsForm from "./TransactionsForm";
 import TransactionsList from "./TransactionsList";
-import cointImg from "../../Images/coint.jpg"
 
 function TransactionsPage() {
     return ( 
         <main className="transaction-page">
-            <div>
+            <div className="change-order">
                 <section className="financial-overview-section">
                     <IncomeAndBudget />
                     <hr className="transactionPage-divider"/>
@@ -19,16 +18,12 @@ function TransactionsPage() {
 
                 <hr className="transactionPage-divider-2"/>
 
-            <section className="form-container">
+            <section className="transactions-form-section">
                 <div className="heading">
                     <h2>Record Your Expenses</h2>
                 </div>
                 <TransactionsForm /> 
             </section>
-
-            <div className="img-wrapper">
-                <img src={cointImg} alt="coint" className="transaction-page-img"/>
-            </div>
         </main>
      );
 }

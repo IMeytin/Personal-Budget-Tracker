@@ -47,13 +47,18 @@ header {
   padding: 0 15px;
   position: relative;
 }
+
 .navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 90px;
+  max-height: 90px;
   font-family: var(--heading-font);
+}
+.logo, .logo-wrapper {
+  max-width: 80px;
+  max-height: 90px;
 }
 .nav-links {
   display: flex;
@@ -70,21 +75,22 @@ header {
 }
 
 /* homePage */
-.heading-margin , .welcome-section-container{
+.heading-margin , .welcome-section-container, .reports-welcome-section{
   margin: 50px 0px;
 }
 .welcome-section-img {
-  width: 300px;
+  max-width: 300px;
 }
-.welcome-section-container {
+.welcome-section-container, .reports-welcome-section {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-around;
 }
 .welcome-text-container {
   max-width: 540px;
 }
 
-.subHeading, .display-financial, .financial-form-labels, .finantial-form-input{
+.subHeading, .display-financial, .financial-form-labels, .financial-form-input{
   font-size: 20px;
 }
 
@@ -110,13 +116,12 @@ header {
   align-items: center;
   margin-left: -50px;
 }
+.transactions-form-section{
+  margin-left: 90px;
+}
 
 .transaction-page-img{
-  width: 300px;
-}
-.img-wrapper {
-  margin-left: auto;
-  margin-top: 70px;
+  max-width: 300px;
 }
 
 /* Income and Budget Component */
@@ -128,19 +133,19 @@ header {
   width: 290px;
   margin-top: 5px;
 }
+.budget-margin, .finance-form-wrapper {
+  margin-bottom: 20px;
+}
 .income-magrin {
   margin-bottom: 40px;
 }
-.financial-form-labels, .finantial-form-input{
+.financial-form-labels, .financial-form-input{
   color: var(--secondary-color);
   font-family: var(--heading-font);
   height: 30px;
 }
-.budget-margin, .finance-form-wrapper {
-  margin-bottom: 20px;
-}
 
-.finantial-form-input {
+.financial-form-input {
   background-color: var(--primary-color);
   width: 150px;
   border: none;
@@ -153,12 +158,54 @@ header {
   color: var(--button-color);
 
 }
-.form-container{
-  margin-left: 90px;
+
+/* TransactionList */
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 400px;
+
+}
+.display-expenses-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: var(--primary-color) 1.5px solid;
+  border-radius: 25px;
+  background-color: var(--input-primary-color);
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  width: 170px;
+}
+.display-expenses p {
+  margin: 0;
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 100;
+}
+.delete-btn:hover{
+  color: red;
+}
+.noExpenses-img{
+  max-width: 400px;
 }
 
 
 /* Expenses form */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-img-wrapper {
+  margin-left: 30px;
+}
 input {
   background-color: var(--input-primary-color);
   border: var(--input-secondary-color) 2px solid;
@@ -169,10 +216,9 @@ input {
   display: flex;
   margin: 10px 0px;
 }
-.input-radio-container div:not(:first-child) {
-  margin-left: 15px;
+.input-radio-container div:not(:last-child) {
+  margin-right: 15px;
 }
-
 label {
   font-weight: bold;
 }
@@ -199,53 +245,16 @@ label {
   border: var(--button-color) solid 1px;
 }
 
-/* TransactionList */
-.list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 400px;
-
-}
-.display-expenses-wrapper {
-  border: var(--primary-color) 1.5px solid;
-  border-radius: 25px;
-  background-color: var(--input-primary-color);
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  align-items: center;
-  padding: 10px 15px;
-  width: 170px;
-}
-.display-expenses p {
-  margin: 0;
-}
-
-.delete-btn {
-  border: none;
-  background: none;
-  font-size: 30px;
-  color: var(--primary-color);
-  cursor: pointer;
-  font-weight: 100;
-}
-.delete-btn:hover{
-  color: red;
-}
-.noExpenses-img{
-  width: 400px;
-}
-
 /* Reports Page */
 .chart-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 50px 0px;
 }
 /* Reports welcome text */
 .reports-image {
-  width: 500px;
+  max-width: 500px;
 }
 .reports-welcome-section{
   align-items: center;
@@ -256,4 +265,204 @@ label {
   width: 600px;
 }
 
+/* Screen */
+
+@media all and (max-width: 800px){
+  .container {
+    padding: 0 30px;
+  }
+  .body-text, .action-btn, label {
+    font-size: 17px;
+  }
+  .link {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .heading-margin , .welcome-section-container, .reports-welcome-section {
+    margin: 30px 0px
+  }
+  .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
+    font-size: 19px;
+  }
+/* transactionPage */
+  .transaction-page {
+    margin-top: 30px;
+  }
+  .financial-overview-section, .transaction-list-section {
+    max-width:350px;
+    margin-left: -20px;
+  }
+  .transactionPage-divider {
+    width: 300px;
+  }
+  .transactions-form-section{
+    margin-left: 30px;
+  }
+
+  /* Income and Budget Component */
+  .display-financial{
+    width: 250px;
+  }
+  .budget-margin, .finance-form-wrapper {
+    margin-bottom: 15px;
+  }
+  .income-magrin {
+    margin-bottom: 35px;
+  }
+  .financial-form-input{
+    width: 125px;
+  }
+
+  /* TransactionList */
+  .display-expenses-wrapper {
+    width: 140px;
+    padding: 7px 12px;
+    margin: 10px 5px;
+  }
+  .delete-btn {
+    font-size: 25px;
+  }
+  .noExpenses-img{
+    max-width: 300px;
+  }
+
+  /* Expenses form */
+  .input-radio-container {
+    flex-wrap: wrap;
+  }
+  .input-radio-container div {
+    margin: 5px 0px
+  }
+  .btn-add-expanse {
+    padding: 7px;
+  }
+
+  /* Reports welcome text */
+  .reports-image {
+    max-width: 425px;
+    float: right;
+    margin-left: 15px;
+  }
+  .reports-welcome-section {
+    display: block;
+  }
+}
+@media all and (max-width: 500px) {
+  body {
+    line-height: 1.4;
+  }
+  .body-text, .action-btn, label {
+    font-size: 16px;
+  }
+  .link {
+    font-size: 19px;
+  }
+  h2 {
+    font-size: 21px;
+    text-align: center;
+  }
+  .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
+    font-size: 18px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  .navBar {
+    max-height: 80px;
+  }
+  .logo, .logo-wrapper {
+    max-height: 70px;
+  }
+  .nav-links {
+    padding: 0px;
+  }
+  .nav-links li:not(:last-child) {
+    margin-right: 0px;
+    padding-right: 15px;
+  }
+
+  /* homePage */
+  .heading-margin , .welcome-section-container, .reports-welcome-section {
+    margin: 15px 0px
+  }
+  .welcome-section-container {
+    display: block;
+  }
+  .welcome-section-img {
+    float: right;
+    max-width: 170px;
+  }
+  /* TransactionPage */
+  .transaction-page-img{
+    display: none;
+  }
+  .transaction-page {
+    display: flex;
+    flex-direction: column;
+  }
+  .transactionPage-divider-2 {
+    display: none;
+  }
+  .change-order {
+    order: 1;
+  }
+  .transactionPage-divider{
+    order: -1;
+  }
+
+  .financial-overview-section, .transaction-list-section {
+    margin: 0px;
+    margin-left: 0px;
+    justify-content: center;
+  }
+  .transactions-form-section{
+    margin-left: 0px;
+  }
+
+    /* expenses form */
+    .wrapper form {
+      margin-left: 20px;
+    }
+
+    /* Income and Budget Component */
+    .income-magrin {
+      margin-bottom: 25px;
+    }
+    .budget-margin, .finance-form-wrapper {
+      margin-bottom: 5px;
+    }
+    .finance-form-wrapper {
+      margin-top: 10px;
+    }
+
+  /* TransactionList */
+  .noExpenses-img{
+    max-width: 200px;
+  }
+  .change-order h3 {
+    margin: 0px 0px 5px 0px;
+  }
+  .delete-btn {
+    font-size: 20px;
+  }
+    /* Reports welcome text */ 
+    .reports-image {
+      max-width: 200px;
+      margin-left: 10px;
+    }
+    .chart {
+      width: 300px;
+      text-align: center;
+    }
+    .bar-chart {
+      margin: 30px 0px;
+      width: 300px;
+      height: 250px;
+    }
+    .chart-section {
+      margin: 20px 0px;
+    }
+}
 

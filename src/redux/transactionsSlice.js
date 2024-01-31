@@ -57,7 +57,7 @@ export const getTotalExpenses = createSelector(
     (submittedData) => {
         return submittedData.reduce((total, {amount}) => {
             return total += Number(amount)
-        }, 0)
+        }, 0);
     }
 )
 
