@@ -22,7 +22,7 @@ body {
   font-family: var(--body-text-font);
   color: var(--text-color);
 }
-.body-text, .action-btn, label  {
+.body-text, .action-btn, label, input  {
   font-size: 18px;
 }
 .heading {
@@ -274,7 +274,7 @@ label {
   .container {
     padding: 0 30px;
   }
-  .body-text, .action-btn, label {
+  .body-text, .action-btn, label, input {
     font-size: 17px;
   }
   .link {
@@ -286,7 +286,7 @@ label {
   .heading-margin , .welcome-section-container, .reports-welcome-section {
     margin: 30px 0px
   }
-  .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
+  .subHeading, .display-financial, .financial-form-labels, .financial-form-input {
     font-size: 19px;
   }
 /* transactionPage */
@@ -355,9 +355,6 @@ label {
 @media all and (max-width: 500px) {
   body {
     line-height: 1.4;
-  }
-  .body-text, .action-btn, label {
-    font-size: 16px;
   }
   .link {
     font-size: 19px;
