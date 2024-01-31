@@ -320,8 +320,8 @@ label {
 
   /* TransactionList */
   .display-expenses-wrapper {
-    width: 155px;
-    padding: 7px 12px;
+    width: 160px;
+    padding: 7px 10px;
     margin: 10px 5px;
   }
   .delete-btn {
@@ -356,16 +356,16 @@ label {
   body {
     line-height: 1.4;
   }
-  .link {
+  /* .link {
     font-size: 19px;
-  }
+  } */
   h2 {
-    font-size: 21px;
+    /* font-size: 21px; */
     text-align: center;
   }
-  .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
+  /* .subHeading, .display-financial, .financial-form-labels, .financial-form-input{
     font-size: 18px;
-  }
+  } */
   .container {
     padding: 0 20px;
   }
