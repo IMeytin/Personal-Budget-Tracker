@@ -8,7 +8,7 @@ function BarChart() {
     const totalByCategory = useSelector(getTotalByCategory);
     const categories = ['Rent', 'Grocery', 'Shopping', 'Dining Out', 'Other']
     const dataPoints = categories.map(category => totalByCategory[category] || 0)
-    console.log(totalByCategory)
+
 
     const data = {
         labels: categories,
