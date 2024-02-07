@@ -13,7 +13,7 @@ function NavBar() {
                         <Link className='link' to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link className='link' to='/Transactions'>Trasactions</Link>
+                        <Link className='link' to='/Transactions'>Transactions</Link>
                     </li>
                     <li>
                         <Link className='link' to='/Reports'>Reports</Link>
